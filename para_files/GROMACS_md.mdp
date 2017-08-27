@@ -1,0 +1,39 @@
+integrator     = md
+
+dt              = 0.002
+nsteps          = 500000000  ; 500 ns second
+
+continuation    = yes       ;Restarting after NVT
+constraints     = hbonds
+
+nstxout         = 0
+nstvout         = 0
+nstxtcout       = 2500
+xtc_grps        = system
+nstlog          = 2500
+nstenergy       = 2500
+energygrps      = protein
+
+nstcomm           = 5
+nstlist           = 5
+ns_type           = grid
+
+rlist             = 1.0 
+coulombtype       = PME
+rcoulomb          = 1.0
+vdwtype           = cut-off
+rvdw              = 1.0
+DispCorr          = EnerPres
+
+Tcoupl              = v-rescale
+tc_grps             = system
+tau_t               =  0.2
+ref_t               =  310
+
+Pcoupl              = berendsen
+Pcoupltype          = isotropic
+tau_p               = 0.5
+compressibility     = 4.5e-5
+ref_p               = 1.0
+
+gen_vel             = no

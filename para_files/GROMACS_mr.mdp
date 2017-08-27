@@ -1,0 +1,44 @@
+define         = -DPOSRES
+integrator     = md
+
+dt              = 0.002
+nsteps          = 1000000  ; total 2ns
+
+constraints     = hbonds
+
+nstcomm         = 5
+nstxout         = 500
+nstvout         = 500
+nstlog          = 500
+nstenergy       = 500
+
+nstlist           = 5
+ns_type           = grid
+
+rlist             = 1.0 
+coulombtype       = PME
+rcoulomb          = 1.0
+vdwtype           = cut-off
+rvdw              = 1.0
+DispCorr          = EnerPres
+
+Tcoupl              = berendsen
+tc_grps             = system
+tau_t               =  0.2
+ref_t               =  310
+
+annealing           = single
+annealing_npoints   = 2
+annealing_time      =  0  1000
+annealing_temp      = 10   310  ;  10K to 300K in 1ns
+
+Pcoupl              = berendsen
+Pcoupltype          = isotropic
+tau_p               = 0.5
+compressibility     = 4.5e-5
+ref_p               = 1.0
+
+gen_vel             = yes
+gen_temp            = 10
+gen_seed            = -1
+

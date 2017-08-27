@@ -1,0 +1,26 @@
+###########WCAP input parameters#################
+#This is the input parameter file for WCAP(Water Cluster Analysis Package) vision 1.0.
+#The package include four parts: water oxygen cluster, water hydrogen cluster, water energy calculater and result analyzer.
+#The first vision of WCAP is finished in 2011/05/06.
+#The package is written by Sun Hanzi@Huang Lab NIBS.
+#################################################
+#Water oxygen cluster
+WaterClusterRadii=                 15
+WaterClusterNumber=                100   
+FirstShellRadii=                   4   
+SeedWaterNumber=                   5000   
+#Water hydrogen cluster
+#Water energy calculater
+EnthalpyCalculateRadii=            12   
+HOLO/APO=                          H   
+LigandID=                          INH   
+#Result analyze
+SnapShotNumber=                    5000   
+EnthalpyCutoff=                    8.3   
+EntropyCutoff=                     1   
+#Overall parameter
+Ligand=                            lig.pdb   
+Receptor=                          rec.pdb   
+System=                            system_ion.pdb   
+Trajectory=                        trajectory.pdb   
+ForcefieldParameter=               topfile   
